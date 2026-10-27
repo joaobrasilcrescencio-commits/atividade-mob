@@ -1,0 +1,35 @@
+<ion-content>
+  <div class="ru-wrap">
+    <div class="ru-header teal"><span>Hoje</span><button (click)="voltar()">cardápio</button></div>
+    <div class="ru-body">
+      @for (p of pratos; track p.nome) {
+        <div class="card">
+          <div>
+            <div class="nome">{{ p.nome }}</div>
+            <div class="stars">{{ estrelas(p.nota) }}</div>
+            <div class="sub">"{{ p.comentario }}"</div>
+          </div>
+          <div class="media">{{ formatar(p.nota) }}</div>
+        </div>
+      }
+
+      @if (formAberto) {
+        <div class="form">
+          <select [(ngModel)]="nova.prato">
+            <option value="" disabled>Escolha o prato</option>
+            @for (p of pratos; track p.nome) { <option [value]="p.nome">{{ p.nome }}</option> }
+          </select>
+          <div class="pick">
+            @for (n of estrelasOpcoes; track n) {
+              <button type="button" [class.on]="nova.nota >= n" (click)="nova.nota = n">★</button>
+            }
+          </div>
+          <input type="text" placeholder="Comentário (opcional)" [(ngModel)]="nova.comentario" />
+          <button class="ru-btn teal" [disabled]="!nova.prato || !nova.nota" (click)="enviar()">Enviar avaliação</button>
+        </div>
+      } @else {
+        <button class="ru-btn teal" (click)="abrirForm()">Avaliar um prato</button>
+      }
+    </div>
+  </div>
+</ion-content>

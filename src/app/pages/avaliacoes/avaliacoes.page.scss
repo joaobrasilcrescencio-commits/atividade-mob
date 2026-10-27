@@ -1,0 +1,20 @@
+.ru-header.teal { background: var(--ru-teal); }
+.ru-btn.teal { background: var(--ru-teal); }
+.card {
+  display: flex; justify-content: space-between; align-items: center;
+  background: var(--ru-card); border: 1px solid var(--ru-border); border-radius: 10px;
+  padding: 10px 12px; margin-bottom: 8px;
+}
+.nome { font-weight: 800; font-size: 14px; color: var(--ru-text); }
+.stars { color: #d97706; font-size: 13px; letter-spacing: 1px; margin: 1px 0; }
+.sub { font-size: 12px; color: var(--ru-muted); }
+.media { font-weight: 800; font-size: 15px; color: var(--ru-text); }
+.form { margin-top: 4px; }
+select, input {
+  width: 100%; box-sizing: border-box; height: 41px; margin-bottom: 8px; padding: 0 12px;
+  border: 1px solid var(--ru-border); border-radius: 10px; background: var(--ru-card);
+  font-size: 14px; color: var(--ru-text);
+}
+.pick { display: flex; gap: 4px; margin-bottom: 8px; }
+.pick button { background: none; border: 0; font-size: 26px; color: #cbd5e1; cursor: pointer; padding: 0 2px; }
+.pick button.on { color: #d97706; }
